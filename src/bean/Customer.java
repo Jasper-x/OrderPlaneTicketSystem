@@ -4,19 +4,19 @@ import java.util.Date;
 
 public class Customer {
 
-    private String id;  //没有业务意义
+    private String customerId;  //没有业务意义
     private String customerType;  //乘客类型：成人、小孩、婴儿
     private String name;  //游客姓名
     private String phone;
     private String cardId;
-    private Date birthDate;
+    private Date birthDay;
 
-    public String getId() {
-        return id;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public String getCustomerType() {
@@ -51,11 +51,11 @@ public class Customer {
         this.cardId = cardId;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public Date getBirthDay() {
+        return birthDay;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthDay(Date birthDay) {
+        this.birthDay = birthDay;
     }
 }

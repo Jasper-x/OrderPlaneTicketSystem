@@ -2,20 +2,20 @@ package bean;
 
 public class Flight {
 
-    private String id;
+    private String flightId;
     private String planeType;
-    private String seatsnumber;
     private String totalseatsnum;
     private String departureAirPort;
     private String destinationAirPort;
     private String departureTime;
 
-    public String getId() {
-        return id;
+
+    public String getFlightId() {
+        return flightId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setFlightId(String flightId) {
+        this.flightId = flightId;
     }
 
     public String getPlaneType() {
@@ -26,13 +26,6 @@ public class Flight {
         this.planeType = planeType;
     }
 
-    public String getSeatsnumber() {
-        return seatsnumber;
-    }
-
-    public void setSeatsnumber(String seatsnumber) {
-        this.seatsnumber = seatsnumber;
-    }
 
     public String getTotalseatsnum() {
         return totalseatsnum;

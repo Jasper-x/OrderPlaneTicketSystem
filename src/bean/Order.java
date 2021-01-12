@@ -4,7 +4,8 @@ import bean.Customer;
 
 public class Order {
 
-    private String id;
+    private String orderId;
+    private String flightId;
     private float jpjg;  //机票价格
     private float airPortTax;  //机场税
     private float ryf;  //燃油费
@@ -14,12 +15,20 @@ public class Order {
     private float hszj;  //含税总价
     private Customer customer[];
 
-    public String getId() {
-        return id;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getFlightId() {
+        return flightId;
+    }
+
+    public void setFlightId(String flightId) {
+        this.flightId = flightId;
     }
 
     public float getJpjg() {
