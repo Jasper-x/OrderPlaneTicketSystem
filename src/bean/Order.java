@@ -1,3 +1,7 @@
+package bean;
+
+import bean.Customer;
+
 public class Order {
 
     private String id;

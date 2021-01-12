@@ -1,3 +1,5 @@
+package bean;
+
 public class Flight {
 
     private String id;
