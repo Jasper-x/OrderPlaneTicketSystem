@@ -1,6 +1,6 @@
-package bll;
+package cn.edu.hcnu.bll;
 
-import bean.Flight;
+import cn.edu.hcnu.bean.Flight;
 
 public interface IFlightService {
     void insertFlight(Flight flight);

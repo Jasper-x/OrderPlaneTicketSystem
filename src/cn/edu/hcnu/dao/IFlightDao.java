@@ -1,7 +1,7 @@
-package dao;
+package cn.edu.hcnu.dao;
 
 
-import bean.Flight;
+import cn.edu.hcnu.bean.Flight;
 
 import java.util.Set;
 

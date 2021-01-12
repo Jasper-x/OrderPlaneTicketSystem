@@ -1,4 +1,4 @@
-package bean;
+package cn.edu.hcnu.bean;
 
 public class Flight {
 

@@ -1,6 +1,4 @@
-package bean;
-
-import bean.Customer;
+package cn.edu.hcnu.bean;
 
 public class Order {
 

@@ -1,4 +1,4 @@
-package dao.impl;
+package cn.edu.hcnu.dao.impl;
 
 public class FlightDaoIml {
 }

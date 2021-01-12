@@ -1,4 +1,4 @@
-package bll.impl;
+package cn.edu.hcnu.bll.impl;
 
 public class FlightServiceImpl {
 }

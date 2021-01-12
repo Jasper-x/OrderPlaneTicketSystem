@@ -1,8 +1,8 @@
-package ui;
+package cn.edu.hcnu.ui;
 
-import bean.Flight;
-import bll.IFlightService;
-import bll.impl.FlightServiceImpl;
+import cn.edu.hcnu.bean.Flight;
+import cn.edu.hcnu.bll.IFlightService;
+import cn.edu.hcnu.bll.impl.FlightServiceImpl;
 
 import java.util.Scanner;
 import java.util.UUID;
