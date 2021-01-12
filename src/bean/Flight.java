@@ -9,6 +9,10 @@ public class Flight {
     private String destinationAirPort;
     private String departureTime;
 
+    public Flight(String id, String flightId, String planeType, int currentSeatsNum, String departureAirPort, String destinationAirPort, String departureTime) {
+
+    }
+
 
     public String getFlightId() {
         return flightId;
