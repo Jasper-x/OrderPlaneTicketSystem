@@ -28,7 +28,7 @@ public class FlightDaoIml implements IFlightDao {
         pstmt.setString(6,flight.getDestinationAirPort());
         pstmt.setString(7,flight.getDepartureTime());
 
-        pstmt.executeLargeUpdate();
+        pstmt.executeUpdate();
     }
 
     @Override
