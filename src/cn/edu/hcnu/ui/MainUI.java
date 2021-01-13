@@ -6,6 +6,7 @@ import cn.edu.hcnu.bll.impl.FlightServiceImpl;
 
 import java.sql.SQLException;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,8 +27,7 @@ public class MainUI {
             int choice = sc.nextInt();
 
             if (choice == 1) {
-                String id = UUID.randomUUID().toString();
-//                        .replace("-", "");
+                String id = UUID.randomUUID().toString().replace("-", "");
 
                 System.out.print("请输入航班编号：");
                 String flightId = sc.next();
@@ -61,11 +61,24 @@ public class MainUI {
                         if (m.find()) {
                             String tableName = m.group(4);
                             String columnName = m.group(5);
-                            System.out.println(tableName + "表的" + columnName + "这一列的值过大，请仔细检查");
+                            System.out.println(tableName + "表的" + columnName + "这一列的值过大，请仔细检查，联系管理员");
                         } else {
                             System.out.println("NO MATCH");
                         }
                     }
+                }
+            } else if (choice == 2) {
+                IFlightService iFlightService = new FlightServiceImpl();
+                try {
+                    Set<Flight> allFlights=iFlightService.getAllFlights();
+                    /*
+                    Set的遍历需要用到迭代器
+                     */
+                    for(Flight flight:allFlights){
+                        System.out.println(flight);
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
             }
         }
