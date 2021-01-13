@@ -12,7 +12,7 @@ public class FlightDaoIml implements IFlightDao {
     @Override
     public void insertFlight(Flight flight) throws SQLException {
 
-        String url = "jdbc:oracle:thin:@localhost:1521:orclhc";
+        String url = "jdbc:oracle:thin:@localhost:1521:ORCL";
         String username = "opts";
         String password = "opts1234";
         Connection conn = DriverManager.getConnection(url, username, password);
@@ -34,7 +34,7 @@ public class FlightDaoIml implements IFlightDao {
     public Set<Flight> getAllFlights() throws SQLException {
         Set<Flight> allFlights = new HashSet<Flight>();//容器
 
-        String url = "jdbc:oracle:thin:@localhost:1521:orclhc";
+        String url = "jdbc:oracle:thin:@localhost:1521:ORCL";
         String username = "opts";
         String password = "opts1234";
         Connection conn = DriverManager.getConnection(url, username, password);
