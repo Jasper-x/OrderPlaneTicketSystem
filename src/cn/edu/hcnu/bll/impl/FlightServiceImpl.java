@@ -3,17 +3,22 @@ package cn.edu.hcnu.bll.impl;
 import cn.edu.hcnu.bean.Flight;
 import cn.edu.hcnu.bll.IFlightService;
 import cn.edu.hcnu.dao.IFlightDao;
+import cn.edu.hcnu.dao.impl.FlightDaoIml;
 
+import java.sql.SQLException;
 import java.util.Set;
 
 public class FlightServiceImpl implements IFlightService {
 
     IFlightDao iFlightDao;
 
+    public FlightServiceImpl(){
+        iFlightDao= (IFlightDao) new FlightDaoIml();
+    }
+
     @Override
-    public void insterFlight(Flight flight) {
-
-
+    public void insertFlight(Flight flight) throws SQLException {
+        iFlightDao.insertFlight(flight);
     }
 
     @Override
@@ -27,7 +32,7 @@ public class FlightServiceImpl implements IFlightService {
     }
 
     @Override
-    public Flight getFlightByDeparturAirPort(String departurAirPort) {
+    public Flight getFlightByDepartureAirPort(String departureAirPort) {
         return null;
     }
 
