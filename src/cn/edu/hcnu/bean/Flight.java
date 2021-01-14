@@ -10,6 +10,15 @@ public class Flight {
     private String destinationAirPort;
     private String departureTime;
 
+    public Flight(String flightId, String planeType, int currentSeatsNum, String departureAirPort, String destinationAirPort, String departureTime) {
+        this.flightId = flightId;
+        this.planeType = planeType;
+        this.currentSeatsNum = currentSeatsNum;
+        this.departureAirPort = departureAirPort;
+        this.destinationAirPort = destinationAirPort;
+        this.departureTime = departureTime;
+    }
+
     public Flight(String id, String flightId, String planeType, int currentSeatsNum, String departureAirPort, String destinationAirPort, String departureTime) {
         this.id = id;
         this.flightId = flightId;

@@ -27,8 +27,8 @@ public class FlightServiceImpl implements IFlightService {
     }
 
     @Override
-    public Flight getFlightByDepartureTime(String departureTime) {
-        return null;
+    public Flight getFlightByDepartureTime(String departureTime) throws SQLException {
+        return iFlightDao.getFlightByDepartureTime(departureTime);
     }
 
     @Override
