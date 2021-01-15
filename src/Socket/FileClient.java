@@ -12,7 +12,7 @@ public class FileClient {
     public static void main(String[] args) {
         Socket socket = null;
         try {
-            socket = new Socket("192.168.1.21", 9999);  //服务器端的IP
+            socket = new Socket("192.168.1.21", 9999);  //服务器端的IP和端口号
             FileOutputStream fos = new FileOutputStream("F:\\2021-01-15.rar");  //接收文件后存放的地址
             InputStream is = socket.getInputStream();
             byte buff[] = new byte[1024];

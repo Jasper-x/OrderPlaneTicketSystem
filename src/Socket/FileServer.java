@@ -10,7 +10,7 @@ public class FileServer {
     public static void main(String[] args) {
         try {
             //0~65535之间：0~1024以内的最好别用，给操作系统
-            ServerSocket ss = new ServerSocket(9889);
+            ServerSocket ss = new ServerSocket(9889);  //端口号
             Socket socket=ss.accept();
 
             OutputStream os=socket.getOutputStream();
