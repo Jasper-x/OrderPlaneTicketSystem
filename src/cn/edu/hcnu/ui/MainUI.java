@@ -13,33 +13,33 @@ import java.util.regex.Pattern;
 
 public class MainUI {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);//æ¥å—é”®ç›˜è¾“å…¥
+        Scanner sc = new Scanner(System.in);//½ÓÊÜ¼üÅÌÊäÈë
         while (true) {
-            System.out.println("è¯·è¾“å…¥ç›¸åº”çš„æ•°å­—è¿›è¡Œæ“ä½œï¼š");
+            System.out.println("ÇëÊäÈëÏàÓ¦µÄÊı×Ö½øĞĞ²Ù×÷£º");
 
-            System.out.println("æŒ‰1ï¼Œå½•å…¥èˆªç­ä¿¡æ¯");
-            System.out.println("æŒ‰2ï¼Œæ˜¾ç¤ºæ‰€æœ‰èˆªç­ä¿¡æ¯");
-            System.out.println("æŒ‰3ï¼ŒæŸ¥è¯¢èˆªç­ä¿¡æ¯");
-            System.out.println("æŒ‰4ï¼Œæœºç¥¨é¢„è®¢");
-            System.out.println("æŒ‰5ï¼Œæœºç¥¨é€€è®¢");
-            System.out.println("æŒ‰6ï¼Œæ¨å‡ºç³»ç»Ÿ");
+            System.out.println("°´1£¬Â¼Èëº½°àĞÅÏ¢");
+            System.out.println("°´2£¬ÏÔÊ¾ËùÓĞº½°àĞÅÏ¢");
+            System.out.println("°´3£¬²éÑ¯º½°àĞÅÏ¢");
+            System.out.println("°´4£¬»úÆ±Ô¤¶©");
+            System.out.println("°´5£¬»úÆ±ÍË¶©");
+            System.out.println("°´6£¬ÍÆ³öÏµÍ³");
 
             int choice = sc.nextInt();
 
             if (choice == 1) {
                 String id = UUID.randomUUID().toString().replace("-", "");
 
-                System.out.print("è¯·è¾“å…¥èˆªç­ç¼–å·ï¼š");
+                System.out.print("ÇëÊäÈëº½°à±àºÅ£º");
                 String flightId = sc.next();
-                System.out.print("è¯·è¾“å…¥æœºå‹ï¼š");
+                System.out.print("ÇëÊäÈë»úĞÍ£º");
                 String planeType = sc.next();
-                System.out.print("è¯·è¾“å…¥åº§ä½æ•°ï¼š");
+                System.out.print("ÇëÊäÈë×ùÎ»Êı£º");
                 int currentSeatsNum = sc.nextInt();
-                System.out.print("è¯·è¾“å…¥èµ·é£æœºåœºï¼š");
+                System.out.print("ÇëÊäÈëÆğ·É»ú³¡£º");
                 String departureAirPort = sc.next();
-                System.out.print("è¯·è¾“å…¥ç›®çš„æœºåœºï¼š");
+                System.out.print("ÇëÊäÈëÄ¿µÄ»ú³¡£º");
                 String destinationAirPort = sc.next();
-                System.out.print("è¯·è¾“å…¥èµ·é£æ—¶é—´ï¼š");
+                System.out.print("ÇëÊäÈëÆğ·ÉÊ±¼ä£º");
                 String departureTime = sc.next();
 
                 Flight flight = new Flight(id, flightId, planeType, currentSeatsNum,
@@ -52,16 +52,16 @@ public class MainUI {
                     String errorMessage = e.getMessage();
                     if (errorMessage.startsWith("ORA-12899")) {
                         //ORA-12899: value too large for column "OPTS"."FLIGHT"."ID" (actual: 32, maximum: 30)
-                        // æŒ‰æŒ‡å®šæ¨¡å¼åœ¨å­—ç¬¦ä¸²æŸ¥æ‰¾
+                        // °´Ö¸¶¨Ä£Ê½ÔÚ×Ö·û´®²éÕÒ
                         String pattern = "(\\w+-\\d{5}):(\\s\\w+)+\\s(\"\\w+\")\\.(\"\\w+\")\\.(\"\\w+\")";
-                        // åˆ›å»º Pattern å¯¹è±¡
+                        // ´´½¨ Pattern ¶ÔÏó
                         Pattern r = Pattern.compile(pattern);
-                        // ç°åœ¨åˆ›å»º matcher å¯¹è±¡
+                        // ÏÖÔÚ´´½¨ matcher ¶ÔÏó
                         Matcher m = r.matcher(errorMessage);
                         if (m.find()) {
                             String tableName = m.group(4);
                             String columnName = m.group(5);
-                            System.out.println(tableName + "è¡¨çš„" + columnName + "è¿™ä¸€åˆ—çš„å€¼è¿‡å¤§ï¼Œè¯·ä»”ç»†æ£€æŸ¥ï¼Œè”ç³»ç®¡ç†å‘˜");
+                            System.out.println(tableName + "±íµÄ" + columnName + "ÕâÒ»ÁĞµÄÖµ¹ı´ó£¬Çë×ĞÏ¸¼ì²é£¬ÁªÏµ¹ÜÀíÔ±");
                         } else {
                             System.out.println("NO MATCH");
                         }
@@ -72,7 +72,7 @@ public class MainUI {
                 try {
                     Set<Flight> allFlights = iFlightService.getAllFlights();
                     /*
-                    Setçš„éå†éœ€è¦ç”¨åˆ°è¿­ä»£å™¨
+                    SetµÄ±éÀúĞèÒªÓÃµ½µü´úÆ÷
                      */
                     for (Flight flight : allFlights) {
                         System.out.println(flight);
@@ -81,22 +81,22 @@ public class MainUI {
                     e.printStackTrace();
                 }
             } else if (choice == 3) {
-                System.out.println("è¾“å…¥ç›¸åº”çš„ç¼–å·é€‰æ‹©æ‚¨è¦æŸ¥è¯¢èˆªç­çš„æ–¹å¼ï¼š");
-                System.out.println("1ï¼ŒæŒ‰èµ·é£æ—¶é—´æŸ¥è¯¢");
-                System.out.println("2ï¼ŒæŒ‰ç©ºåº§ä¿¡æ¯æŸ¥è¯¢");
-                System.out.println("3ï¼ŒæŒ‰èµ·é£ç¬¬æŸ¥è¯¢");
-                System.out.println("4ï¼ŒæŒ‰ç›®çš„åœ°æŸ¥è¯¢");
+                System.out.println("ÊäÈëÏàÓ¦µÄ±àºÅÑ¡ÔñÄúÒª²éÑ¯º½°àµÄ·½Ê½£º");
+                System.out.println("1£¬°´Æğ·ÉÊ±¼ä²éÑ¯");
+                System.out.println("2£¬°´¿Õ×ùĞÅÏ¢²éÑ¯");
+                System.out.println("3£¬°´Æğ·ÉµÚ²éÑ¯");
+                System.out.println("4£¬°´Ä¿µÄµØ²éÑ¯");
                 int choose = sc.nextInt();
                 if (choose == 1) {
-                    System.out.println("è¯·è¾“å…¥èµ·é£æ—¶é—´ï¼š");
+                    System.out.println("ÇëÊäÈëÆğ·ÉÊ±¼ä£º");
                     String departureTime = sc.next();
                     IFlightService iFlightService = new FlightServiceImpl();
                     try {
                         Flight flight = iFlightService.getFlightByDepartureTime(departureTime);
                         if (flight != null) {
-                            System.out.println("æŸ¥è¯¢ç»“æœï¼š" + flight);
+                            System.out.println("²éÑ¯½á¹û£º" + flight);
                         } else {
-                            System.out.println("æ²¡æœ‰æŸ¥è¯¢åˆ°è¯¥æ—¶é—´çš„èˆªç­");
+                            System.out.println("Ã»ÓĞ²éÑ¯µ½¸ÃÊ±¼äµÄº½°à");
                         }
                     } catch (SQLException e) {
                         e.printStackTrace();
